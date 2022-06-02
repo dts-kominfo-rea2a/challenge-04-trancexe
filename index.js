@@ -9,7 +9,7 @@ const dates = [
 
 // TODO: Buatlah fungsi createDate
 // membuat fungsi shortdate, yang dapat memberitahukan posisi waktu dalam bentuk string dengan format epoch time
-const createDate = (dates, pos = 0) => {
+const createDate = (dates, pos) => {
   // convert date to epoch time in second
   let datesEpoch = [];
   for(date of dates){
@@ -18,7 +18,7 @@ const createDate = (dates, pos = 0) => {
   datesEpoch.sort();
   
   // find position of array
-  if (pos === 0){
+  if (pos === undefined){
     // return array to string with - separator
     return datesEpoch.join("-");
   } else {
