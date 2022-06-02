@@ -15,6 +15,7 @@ const createDate = (dates, pos = 0) => {
   for(date of dates){
     datesEpoch.push((Date.parse(date))/1000);
   }
+  datesEpoch.sort();
   
   // find position of array
   if (pos === 0){
