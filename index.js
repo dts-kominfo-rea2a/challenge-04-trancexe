@@ -11,7 +11,6 @@ const dates = [
 // membuat fungsi shortdate, yang dapat memberitahukan posisi waktu dalam bentuk string dengan format epoch time
 const createDate = (dates, pos) => {
   // convert date to epoch time in second
-  dates.sort();
   let datesEpoch = [];
   for(date of dates){
     datesEpoch.push((Date.parse(date))/1000);
@@ -20,8 +19,9 @@ const createDate = (dates, pos) => {
   // find position of array
   if (pos === undefined){
     // return array to string with - separator
-    return datesEpoch.join("-");
+    return datesEpoch.sort().join("-");
   } else {
+    // return position of array
     return datesEpoch[pos].toString();
   }
   
